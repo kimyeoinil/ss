@@ -15,7 +15,7 @@ export default function DiagnosisHistoryPage() {
     if (savedDiagnoses) {
       const parsed = JSON.parse(savedDiagnoses);
       // 날짜 문자열을 Date 객체로 변환
-      const diagnosesWithDates = parsed.map((d: any) => ({
+      const diagnosesWithDates = parsed.map((d: DiagnosisResult) => ({
         ...d,
         createdAt: new Date(d.createdAt)
       }));

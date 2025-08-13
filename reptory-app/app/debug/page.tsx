@@ -5,7 +5,7 @@ import { allAnimals } from '@/lib/mockData/initialData';
 import { breederAnimals } from '@/lib/mockData/breederData';
 
 export default function DebugPage() {
-  const [localData, setLocalData] = useState<any>(null);
+  const [localData, setLocalData] = useState<{animals?: Array<{id: string; title: string}>} | null>(null);
 
   useEffect(() => {
     const data = localStorage.getItem('reptory_data');
@@ -43,7 +43,7 @@ export default function DebugPage() {
       <div className="mb-8">
         <h2 className="text-xl font-semibold mb-2">LocalStorage 동물 IDs:</h2>
         <pre className="bg-gray-100 p-4 rounded overflow-auto max-h-96">
-          {localData ? JSON.stringify(localData.animals?.map((a: any) => ({ id: a.id, title: a.title })), null, 2) : 'No data'}
+          {localData ? JSON.stringify(localData.animals?.map((a) => ({ id: a.id, title: a.title })), null, 2) : 'No data'}
         </pre>
       </div>
 
