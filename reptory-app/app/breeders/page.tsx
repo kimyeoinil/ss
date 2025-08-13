@@ -13,18 +13,18 @@ export default function BreedersPage() {
   const [sortBy, setSortBy] = useState<'rating' | 'transaction' | 'ai'>('rating');
 
   // 필터링 및 정렬
-  let filteredBreeders = mockBreeders.filter(breeder => {
+  const filteredBreeders = mockBreeders.filter(breeder => {
     const matchesSearch = breeder.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          breeder.businessName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          breeder.location.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesSpecies = !selectedSpecies || breeder.specialties.includes(selectedSpecies as any);
+    const matchesSpecies = !selectedSpecies || breeder.specialties.includes(selectedSpecies as string);
     
     return matchesSearch && matchesSpecies;
   });
 
   // 정렬
-  filteredBreeders.sort((a, b) => {
+  const sortedBreeders = [...filteredBreeders].sort((a, b) => {
     switch (sortBy) {
       case 'rating':
         return b.rating - a.rating;
@@ -88,7 +88,7 @@ export default function BreedersPage() {
           <SlidersHorizontal className="h-4 w-4 text-gray-500" />
           <select
             value={sortBy}
-            onChange={(e) => setSortBy(e.target.value as any)}
+            onChange={(e) => setSortBy(e.target.value as 'rating' | 'transaction' | 'ai')}
             className="text-sm text-gray-700 bg-transparent focus:outline-none"
           >
             <option value="rating">평점 높은순</option>
@@ -101,11 +101,11 @@ export default function BreedersPage() {
       {/* 브리더 목록 */}
       <div className="p-4">
         <p className="text-sm text-gray-600 mb-4">
-          {filteredBreeders.length}명의 브리더
+          {sortedBreeders.length}명의 브리더
         </p>
 
         <div className="space-y-4">
-          {filteredBreeders.map((breeder, index) => (
+          {sortedBreeders.map((breeder, index) => (
             <motion.div
               key={breeder.id}
               initial={{ opacity: 0, y: 20 }}
