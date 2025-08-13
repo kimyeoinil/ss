@@ -164,7 +164,7 @@ export default function ProfilePage() {
                   )}
                 </div>
                 <div className="flex items-center gap-2">
-                  {item.badge && (
+                  {'badge' in item && item.badge && (
                     <span className="px-2 py-0.5 bg-green-100 text-green-700 text-sm font-medium rounded-full">
                       {item.badge}
                     </span>
