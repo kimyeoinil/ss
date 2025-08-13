@@ -1,0 +1,59 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="geckoGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="leopardSpots1" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="15" r="8" fill="#7c2d12" opacity="0.5"/>
+      <circle cx="5" cy="5" r="5" fill="#92400e" opacity="0.4"/>
+      <circle cx="25" cy="25" r="6" fill="#92400e" opacity="0.4"/>
+    </pattern>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="400" height="400" fill="#fefce8" rx="20"/>
+  
+  <!-- 바위 -->
+  <ellipse cx="200" cy="320" rx="150" ry="40" fill="#a8a29e" opacity="0.5"/>
+  
+  <!-- 꼬리 -->
+  <path d="M 250 220 Q 300 230, 320 260 Q 330 280, 320 300" 
+        fill="none" stroke="url(#geckoGrad1)" stroke-width="25" stroke-linecap="round"/>
+  <path d="M 250 220 Q 300 230, 320 260 Q 330 280, 320 300" 
+        fill="none" stroke="url(#leopardSpots1)" stroke-width="25" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- 몸통 -->
+  <ellipse cx="200" cy="200" rx="70" ry="40" fill="url(#geckoGrad1)"/>
+  <ellipse cx="200" cy="200" rx="70" ry="40" fill="url(#leopardSpots1)" opacity="0.8"/>
+  
+  <!-- 머리 -->
+  <ellipse cx="130" cy="190" rx="35" ry="30" fill="url(#geckoGrad1)"/>
+  <ellipse cx="130" cy="190" rx="35" ry="30" fill="url(#leopardSpots1)" opacity="0.8"/>
+  
+  <!-- 큰 눈 -->
+  <circle cx="115" cy="185" r="12" fill="#f59e0b"/>
+  <circle cx="115" cy="185" r="10" fill="#1f2937"/>
+  <ellipse cx="115" cy="185" rx="3" ry="8" fill="#171717"/>
+  <circle cx="117" cy="182" r="2" fill="white"/>
+  
+  <circle cx="145" cy="185" r="12" fill="#f59e0b"/>
+  <circle cx="145" cy="185" r="10" fill="#1f2937"/>
+  <ellipse cx="145" cy="185" rx="3" ry="8" fill="#171717"/>
+  <circle cx="147" cy="182" r="2" fill="white"/>
+  
+  <!-- 코 -->
+  <ellipse cx="130" cy="205" rx="2" ry="1.5" fill="#7c2d12"/>
+  
+  <!-- 입 -->
+  <path d="M 120 208 Q 130 210, 140 208" fill="none" stroke="#92400e" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 다리 -->
+  <ellipse cx="160" cy="230" rx="15" ry="30" fill="url(#geckoGrad1)" transform="rotate(-30 160 230)"/>
+  <ellipse cx="240" cy="230" rx="15" ry="30" fill="url(#geckoGrad1)" transform="rotate(30 240 230)"/>
+  
+  <!-- 발가락 -->
+  <ellipse cx="150" cy="255" rx="8" ry="5" fill="#f59e0b"/>
+  <ellipse cx="250" cy="255" rx="8" ry="5" fill="#f59e0b"/>
+</svg>

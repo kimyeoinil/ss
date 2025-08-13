@@ -1,0 +1,68 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="shellGrad1" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d97706;stop-opacity:1" />
+      <stop offset="100%
+
+" style="stop-color:#92400e;stop-opacity:1" />
+    </radialGradient>
+    <pattern id="shellHex1" x="0" y="0" width="50" height="45" patternUnits="userSpaceOnUse">
+      <polygon points="25,5 45,18 45,32 25,45 5,32 5,18" fill="none" stroke="#7c2d12" stroke-width="2.5"/>
+      <polygon points="25,12 38,20 38,28 25,36 12,28 12,20" fill="none" stroke="#7c2d12" stroke-width="1.5" opacity="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="400" height="400" fill="#fefce8" rx="20"/>
+  
+  <!-- 잔디 -->
+  <ellipse cx="100" cy="350" rx="80" ry="20" fill="#84cc16" opacity="0.4"/>
+  <ellipse cx="300" cy="340" rx="60" ry="15" fill="#84cc16" opacity="0.4"/>
+  
+  <!-- 그림자 -->
+  <ellipse cx="200" cy="320" rx="110" ry="25" fill="#78716c" opacity="0.3"/>
+  
+  <!-- 뒷다리 -->
+  <ellipse cx="150" cy="280" rx="22" ry="30" fill="#6b7280"/>
+  <ellipse cx="250" cy="280" rx="22" ry="30" fill="#6b7280"/>
+  
+  <!-- 등껍질 -->
+  <ellipse cx="200" cy="220" rx="120" ry="80" fill="url(#shellGrad1)"/>
+  <ellipse cx="200" cy="220" rx="120" ry="80" fill="url(#shellHex1)" opacity="0.8"/>
+  
+  <!-- 등껍질 하이라이트 -->
+  <ellipse cx="180" cy="190" rx="35" ry="20" fill="#fde68a" opacity="0.4"/>
+  
+  <!-- 앞다리 -->
+  <ellipse cx="130" cy="260" rx="20" ry="25" fill="#6b7280"/>
+  <ellipse cx="270" cy="260" rx="20" ry="25" fill="#6b7280"/>
+  
+  <!-- 머리 -->
+  <ellipse cx="120" cy="200" rx="35" ry="30" fill="#6b7280"/>
+  
+  <!-- 목 -->
+  <rect x="120" y="195" width="45" height="25" fill="#6b7280"/>
+  
+  <!-- 눈 -->
+  <circle cx="105" cy="195" r="7" fill="#1f2937"/>
+  <circle cx="107" cy="193" r="2" fill="white"/>
+  <circle cx="135" cy="195" r="7" fill="#1f2937"/>
+  <circle cx="137" cy="193" r="2" fill="white"/>
+  
+  <!-- 코 -->
+  <ellipse cx="120" cy="210" rx="2.5" ry="2" fill="#4b5563"/>
+  
+  <!-- 입 -->
+  <path d="M 108 213 Q 120 216, 132 213" fill="none" stroke="#4b5563" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 발톱 -->
+  <ellipse cx="125" cy="285" rx="3" ry="5" fill="#4b5563"/>
+  <ellipse cx="135" cy="285" rx="3" ry="5" fill="#4b5563"/>
+  <ellipse cx="265" cy="285" rx="3" ry="5" fill="#4b5563"/>
+  <ellipse cx="275" cy="285" rx="3" ry="5" fill="#4b5563"/>
+  
+  <!-- 목 주름 -->
+  <path d="M 140 205 Q 145 207, 150 205" fill="none" stroke="#4b5563" stroke-width="1" opacity="0.5"/>
+  <path d="M 140 210 Q 145 212, 150 210" fill="none" stroke="#4b5563" stroke-width="1" opacity="0.5"/>
+</svg>

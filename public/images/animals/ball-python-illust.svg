@@ -1,0 +1,40 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pythonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="eyeGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="400" height="400" fill="#fef9c3" rx="20"/>
+  
+  <!-- 볼파이톤 몸통 - S자 형태 -->
+  <path d="M 100 300 Q 150 250, 200 280 T 300 250 Q 350 220, 300 180 T 200 150 Q 150 120, 100 150" 
+        fill="none" stroke="url(#pythonGrad)" stroke-width="60" stroke-linecap="round"/>
+  
+  <!-- 패턴 -->
+  <circle cx="150" cy="270" r="20" fill="#92400e" opacity="0.6"/>
+  <circle cx="250" cy="265" r="25" fill="#92400e" opacity="0.5"/>
+  <circle cx="200" cy="180" r="22" fill="#92400e" opacity="0.6"/>
+  <circle cx="280" cy="215" r="18" fill="#92400e" opacity="0.5"/>
+  <circle cx="150" cy="140" r="20" fill="#92400e" opacity="0.5"/>
+  
+  <!-- 머리 -->
+  <ellipse cx="100" cy="150" rx="45" ry="35" fill="#d97706"/>
+  <ellipse cx="100" cy="150" rx="45" ry="35" fill="url(#pythonGrad)" opacity="0.5"/>
+  
+  <!-- 눈 -->
+  <ellipse cx="85" cy="145" rx="10" ry="12" fill="url(#eyeGrad)"/>
+  <ellipse cx="85" cy="147" rx="3" ry="8" fill="#1f2937"/>
+  <ellipse cx="115" cy="145" rx="10" ry="12" fill="url(#eyeGrad)"/>
+  <ellipse cx="115" cy="147" rx="3" ry="8" fill="#1f2937"/>
+  
+  <!-- 혀 -->
+  <path d="M 100 165 L 95 175 M 100 165 L 105 175" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,49 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pythonGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde68a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#92400e;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="pythonPattern1" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="15" fill="#7c2d12" opacity="0.3"/>
+      <circle cx="0" cy="0" r="15" fill="#7c2d12" opacity="0.3"/>
+      <circle cx="40" cy="0" r="15" fill="#7c2d12" opacity="0.3"/>
+      <circle cx="0" cy="40" r="15" fill="#7c2d12" opacity="0.3"/>
+      <circle cx="40" cy="40" r="15" fill="#7c2d12" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="400" height="400" fill="#fef3c7" rx="20"/>
+  
+  <!-- 그림자 -->
+  <ellipse cx="200" cy="320" rx="160" ry="40" fill="#92400e" opacity="0.2"/>
+  
+  <!-- 뱀 몸통 - 휘어진 형태 -->
+  <path d="M 100 280 Q 150 200, 200 180 Q 250 160, 300 200 Q 320 240, 280 280 Q 240 300, 200 280 Q 150 260, 120 300"
+        fill="url(#pythonGrad1)" stroke="none" stroke-width="0"/>
+  
+  <!-- 무늬 패턴 오버레이 -->
+  <path d="M 100 280 Q 150 200, 200 180 Q 250 160, 300 200 Q 320 240, 280 280 Q 240 300, 200 280 Q 150 260, 120 300"
+        fill="url(#pythonPattern1)" opacity="0.5"/>
+  
+  <!-- 머리 부분 -->
+  <ellipse cx="200" cy="180" rx="35" ry="30" fill="#d97706"/>
+  
+  <!-- 눈 -->
+  <circle cx="185" cy="175" r="8" fill="#1f2937"/>
+  <circle cx="187" cy="173" r="3" fill="white"/>
+  <circle cx="215" cy="175" r="8" fill="#1f2937"/>
+  <circle cx="217" cy="173" r="3" fill="white"/>
+  
+  <!-- 코 -->
+  <ellipse cx="200" cy="190" rx="3" ry="2" fill="#7c2d12"/>
+  
+  <!-- 혀 -->
+  <path d="M 200 195 L 200 205 L 195 210 M 200 205 L 205 210" 
+        fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 하이라이트 -->
+  <ellipse cx="180" cy="160" rx="20" ry="10" fill="#fbbf24" opacity="0.4"/>
+</svg>
