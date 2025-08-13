@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 1rem;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  /* 버튼 스타일 */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-2xl font-medium text-base transition-all duration-200 active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply btn bg-green-600 text-white shadow-lg hover:bg-green-700;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-white text-gray-900 border-2 border-gray-200 hover:border-gray-300;
+  }
+  
+  /* 카드 스타일 */
+  .card {
+    @apply bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200;
+  }
+  
+  /* 배지 */
+  .badge {
+    @apply inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold;
+  }
+  
+  .badge-primary {
+    @apply badge bg-green-100 text-green-800;
+  }
+  
+  .badge-success {
+    @apply badge bg-green-100 text-green-700;
+  }
+  
+  /* 입력 필드 */
+  .input {
+    @apply w-full px-4 py-3 bg-gray-100 border-0 rounded-2xl text-base focus:bg-white focus:ring-2 focus:ring-green-500 focus:outline-none;
+  }
+  
+  /* 글래스모피즘 */
+  .glass {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20;
+  }
+}
+
+@layer utilities {
+  /* 스크롤바 숨기기 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* 안전 영역 */
+  .pb-safe-offset-ios {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+  
+  /* 그라디언트 */
+  .gradient-mesh {
+    background-image: 
+      radial-gradient(at 40% 20%, rgba(34, 197, 94, 0.3) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(125, 211, 252, 0.3) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(251, 191, 36, 0.3) 0px, transparent 50%);
+  }
+  
+  /* 애니메이션 */
+  .animate-slide-up {
+    animation: slide-up 0.3s ease-out;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}

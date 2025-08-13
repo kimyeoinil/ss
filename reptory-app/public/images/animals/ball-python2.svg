@@ -1,0 +1,46 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="pythonGrad2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#d97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c2d12;stop-opacity:1" />
+    </radialGradient>
+    <pattern id="pythonSpots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+      <ellipse cx="25" cy="25" rx="20" ry="15" fill="#92400e" opacity="0.4" transform="rotate(45 25 25)"/>
+    </pattern>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="400" height="400" fill="#fef9c3" rx="20"/>
+  
+  <!-- 그림자 -->
+  <ellipse cx="200" cy="330" rx="140" ry="35" fill="#78716c" opacity="0.3"/>
+  
+  <!-- 뱀 몸통 - 둥글게 말린 형태 -->
+  <circle cx="200" cy="200" r="120" fill="none" stroke="url(#pythonGrad2)" stroke-width="60"/>
+  <circle cx="200" cy="200" r="120" fill="none" stroke="url(#pythonSpots)" stroke-width="60" opacity="0.6"/>
+  
+  <!-- 내부 원 -->
+  <circle cx="200" cy="200" r="60" fill="none" stroke="url(#pythonGrad2)" stroke-width="50"/>
+  
+  <!-- 머리 -->
+  <ellipse cx="260" cy="130" rx="40" ry="35" fill="#d97706" transform="rotate(30 260 130)"/>
+  
+  <!-- 머리 무늬 -->
+  <ellipse cx="250" cy="120" rx="15" ry="10" fill="#92400e" opacity="0.5" transform="rotate(30 250 120)"/>
+  
+  <!-- 눈 -->
+  <circle cx="245" cy="125" r="9" fill="#1f2937"/>
+  <circle cx="247" cy="123" r="3" fill="white"/>
+  <circle cx="275" cy="135" r="9" fill="#1f2937"/>
+  <circle cx="277" cy="133" r="3" fill="white"/>
+  
+  <!-- 코 -->
+  <ellipse cx="265" cy="145" rx="3" ry="2" fill="#7c2d12" transform="rotate(30 265 145)"/>
+  
+  <!-- 꼬리 끝 -->
+  <path d="M 140 320 Q 120 330, 110 340" fill="none" stroke="#d97706" stroke-width="30" stroke-linecap="round"/>
+  
+  <!-- 하이라이트 -->
+  <ellipse cx="220" cy="180" rx="30" ry="15" fill="#fde68a" opacity="0.4"/>
+</svg>

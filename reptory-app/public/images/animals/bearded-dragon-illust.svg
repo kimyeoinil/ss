@@ -1,0 +1,64 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="beardedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde68a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="beardedScales" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="8" fill="none" stroke="#b45309" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- 배경 -->
+  <rect width="400" height="400" fill="#fef9c3" rx="20"/>
+  
+  <!-- 바위 -->
+  <ellipse cx="200" cy="320" rx="150" ry="40" fill="#78716c" opacity="0.5"/>
+  
+  <!-- 꼬리 -->
+  <path d="M 280 250 Q 320 260, 340 290 Q 350 310, 340 330" 
+        fill="none" stroke="url(#beardedGrad)" stroke-width="35" stroke-linecap="round"/>
+  
+  <!-- 몸통 -->
+  <ellipse cx="200" cy="240" rx="100" ry="70" fill="url(#beardedGrad)"/>
+  <ellipse cx="200" cy="240" rx="100" ry="70" fill="url(#beardedScales)"/>
+  
+  <!-- 머리 -->
+  <path d="M 100 200 Q 80 220, 100 240 Q 120 250, 140 240 L 140 200 Q 120 190, 100 200" fill="url(#beardedGrad)"/>
+  
+  <!-- 수염 (beard) - 특징적인 가시 -->
+  <path d="M 90 220 L 80 225 M 90 230 L 80 235 M 90 240 L 80 245" 
+        stroke="#92400e" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 95 225 L 85 230 M 95 235 L 85 240" 
+        stroke="#92400e" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- 등 가시 -->
+  <path d="M 140 190 L 145 180 M 160 190 L 165 180 M 180 195 L 185 185 M 200 200 L 205 190 M 220 205 L 225 195" 
+        stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- 눈 -->
+  <ellipse cx="105" cy="210" rx="10" ry="12" fill="#f59e0b"/>
+  <circle cx="105" cy="212" r="5" fill="#1f2937"/>
+  <circle cx="107" cy="210" r="2" fill="white"/>
+  
+  <ellipse cx="130" cy="210" rx="10" ry="12" fill="#f59e0b"/>
+  <circle cx="130" cy="212" r="5" fill="#1f2937"/>
+  <circle cx="132" cy="210" r="2" fill="white"/>
+  
+  <!-- 코 -->
+  <ellipse cx="90" cy="220" rx="2" ry="3" fill="#7c2d12"/>
+  
+  <!-- 다리 -->
+  <ellipse cx="150" cy="290" rx="25" ry="40" fill="#f59e0b" transform="rotate(-20 150 290)"/>
+  <ellipse cx="250" cy="290" rx="25" ry="40" fill="#f59e0b" transform="rotate(20 250 290)"/>
+  
+  <!-- 발톱 -->
+  <path d="M 140 320 L 138 325 M 145 322 L 143 327 M 150 320 L 148 325" 
+        stroke="#7c2d12" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 250 320 L 252 325 M 255 322 L 257 327 M 260 320 L 262 325" 
+        stroke="#7c2d12" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 입 (열린 모습) -->
+  <path d="M 85 225 Q 90 230, 95 225" fill="none" stroke="#7c2d12" stroke-width="2" stroke-linecap="round"/>
+</svg>
