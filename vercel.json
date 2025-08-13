@@ -1,6 +1,14 @@
 {
-  "buildCommand": "cd reptory-app && npm run build",
-  "outputDirectory": "reptory-app/.next",
-  "installCommand": "cd reptory-app && npm install",
-  "framework": "nextjs"
+  "builds": [
+    {
+      "src": "reptory-app/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/reptory-app/$1"
+    }
+  ]
 }
