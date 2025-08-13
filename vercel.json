@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd reptory-app && npm run build",
+  "outputDirectory": "reptory-app/.next",
+  "installCommand": "cd reptory-app && npm install",
+  "framework": "nextjs"
+}
