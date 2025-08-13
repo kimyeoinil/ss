@@ -13,9 +13,9 @@ export default function DiagnosisHistoryPage() {
     // 로컬스토리지에서 진단 이력 불러오기
     const savedDiagnoses = localStorage.getItem('reptory_diagnoses');
     if (savedDiagnoses) {
-      const parsed = JSON.parse(savedDiagnoses);
+      const parsed = JSON.parse(savedDiagnoses) as Array<Omit<DiagnosisResult, 'createdAt'> & {createdAt: string}>;
       // 날짜 문자열을 Date 객체로 변환
-      const diagnosesWithDates = parsed.map((d: DiagnosisResult) => ({
+      const diagnosesWithDates = parsed.map((d) => ({
         ...d,
         createdAt: new Date(d.createdAt)
       }));

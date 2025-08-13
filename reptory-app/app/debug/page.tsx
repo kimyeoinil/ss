@@ -5,7 +5,10 @@ import { allAnimals } from '@/lib/mockData/initialData';
 import { breederAnimals } from '@/lib/mockData/breederData';
 
 export default function DebugPage() {
-  const [localData, setLocalData] = useState<{animals?: Array<{id: string; title: string}>} | null>(null);
+  interface LocalStorageData {
+    animals?: Array<{id: string; title: string}>;
+  }
+  const [localData, setLocalData] = useState<LocalStorageData | null>(null);
 
   useEffect(() => {
     const data = localStorage.getItem('reptory_data');
