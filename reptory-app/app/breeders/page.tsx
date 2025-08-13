@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Search, MapPin, Star, CheckCircle, SlidersHorizontal } from 'lucide-react';
 import { mockBreeders } from '@/lib/mockData/breederData';
-import { SPECIES } from '@/types';
+import { SPECIES, SpeciesType } from '@/types';
 import { motion } from 'framer-motion';
 
 export default function BreedersPage() {
@@ -18,7 +18,7 @@ export default function BreedersPage() {
                          breeder.businessName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          breeder.location.toLowerCase().includes(searchTerm.toLowerCase());
     
-    const matchesSpecies = !selectedSpecies || breeder.specialties.includes(selectedSpecies as string);
+    const matchesSpecies = !selectedSpecies || breeder.specialties.includes(selectedSpecies as SpeciesType);
     
     return matchesSearch && matchesSpecies;
   });
