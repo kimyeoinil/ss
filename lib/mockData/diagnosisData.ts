@@ -126,10 +126,35 @@ function getMorphData(species: SpeciesType) {
         rarity: 'common' as const,
         characteristics: ['규칙적 패턴', '광택 등갑', '대칭 구조']
       }
+    ],
+    corn_snake: [
+      {
+        morph: 'Normal',
+        confidence: 92,
+        description: '일반적인 콘스네이크의 주황색과 빨간색 패턴입니다.',
+        rarity: 'common' as const,
+        characteristics: ['주황색 패턴', '빨간색 반점', '규칙적 무늬']
+      },
+      {
+        morph: 'Snow',
+        confidence: 88,
+        description: '스노우 모프의 흰색과 분홍색 조합이 아름답습니다.',
+        rarity: 'uncommon' as const,
+        characteristics: ['흰색 베이스', '분홍빛', '연한 패턴']
+      }
+    ],
+    blue_tongue_skink: [
+      {
+        morph: 'Normal',
+        confidence: 94,
+        description: '건강한 블루텅스킨크의 전형적인 갈색 줄무늬입니다.',
+        rarity: 'common' as const,
+        characteristics: ['갈색 줄무늬', '파란 혀', '튼튼한 체형']
+      }
     ]
   };
 
-  const morphOptions = morphDataMap[species] || morphDataMap.ball_python;
+  const morphOptions = morphDataMap[species as keyof typeof morphDataMap] || morphDataMap.ball_python;
   const selectedMorph = morphOptions[Math.floor(Math.random() * morphOptions.length)];
   
   return {
@@ -150,7 +175,9 @@ function getRecommendations(species: SpeciesType, healthScore: number): string[]
     leopard_gecko: ['칼슘 보충제 급여', 'UVB 조명 권장'],
     crested_gecko: ['습도 70-80% 유지', '수직 공간 확보'],
     bearded_dragon: ['UVB 조명 필수', '야채 급여 비율 증가'],
-    tortoise: ['일광욕 시간 확보', '칼슘 보충 중요']
+    tortoise: ['일광욕 시간 확보', '칼슘 보충 중요'],
+    corn_snake: ['온도 구배 설정', '은신처 양쪽 배치'],
+    blue_tongue_skink: ['습도 40-60% 유지', '잡식성 식단 제공']
   };
 
   const recommendations = [...baseRecommendations.slice(0, 2)];
@@ -161,7 +188,7 @@ function getRecommendations(species: SpeciesType, healthScore: number): string[]
     recommendations.unshift('전반적으로 건강한 상태입니다');
   }
 
-  recommendations.push(...(speciesSpecific[species] || []));
+  recommendations.push(...(speciesSpecific[species as keyof typeof speciesSpecific] || []));
   
   return recommendations.slice(0, 4);
 }

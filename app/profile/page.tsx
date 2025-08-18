@@ -54,7 +54,7 @@ export default function ProfilePage() {
     if (data) {
       // 내가 등록한 동물 수 (판매자 이름으로 필터링)
       const mySales = data.animals.filter(animal => 
-        animal.seller.name === '판매자'
+        animal.seller?.name === '판매자'
       ).length;
 
       setStats({
@@ -157,14 +157,14 @@ export default function ProfilePage() {
                     <item.icon className="h-5 w-5 text-gray-600" />
                   </div>
                   <span className="font-medium text-gray-900">{item.label}</span>
-                  {item.isNew && (
+                  {'isNew' in item && item.isNew && (
                     <span className="px-2 py-0.5 bg-red-500 text-white text-xs font-medium rounded-full">
                       NEW
                     </span>
                   )}
                 </div>
                 <div className="flex items-center gap-2">
-                  {item.badge && (
+                  {'badge' in item && item.badge && (
                     <span className="px-2 py-0.5 bg-green-100 text-green-700 text-sm font-medium rounded-full">
                       {item.badge}
                     </span>

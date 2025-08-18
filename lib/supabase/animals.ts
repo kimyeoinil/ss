@@ -25,6 +25,10 @@ export const animalsService = {
     sortBy?: 'latest' | 'price-low' | 'price-high';
     search?: string;
   }) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     let query = supabase
       .from('animals')
       .select(`
@@ -72,6 +76,10 @@ export const animalsService = {
 
   // 동물 상세 조회
   async getAnimal(id: string) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     const { data, error } = await supabase
       .from('animals')
       .select(`
@@ -97,6 +105,10 @@ export const animalsService = {
 
   // 동물 등록
   async createAnimal(animal: AnimalInsert, images: string[]) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     const { data: animalData, error: animalError } = await supabase
       .from('animals')
       .insert(animal)
@@ -114,7 +126,7 @@ export const animalsService = {
         display_order: index
       }));
 
-      const { error: imageError } = await supabase
+      const { error: imageError } = await supabase!
         .from('animal_images')
         .insert(imageInserts);
 
@@ -126,6 +138,10 @@ export const animalsService = {
 
   // 동물 수정
   async updateAnimal(id: string, updates: AnimalUpdate) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     const { data, error } = await supabase
       .from('animals')
       .update(updates)
@@ -139,6 +155,10 @@ export const animalsService = {
 
   // 동물 삭제
   async deleteAnimal(id: string) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     const { error } = await supabase
       .from('animals')
       .delete()
@@ -149,6 +169,10 @@ export const animalsService = {
 
   // 내가 등록한 동물 목록
   async getMyAnimals(userId: string) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     const { data, error } = await supabase
       .from('animals')
       .select(`
@@ -169,6 +193,10 @@ export const animalsService = {
 
   // 조회수 기록
   async recordView(animalId: string, userId: string) {
+    if (!supabase) {
+      throw new Error('Supabase client is not initialized');
+    }
+    
     const { error } = await supabase
       .from('view_history')
       .insert({

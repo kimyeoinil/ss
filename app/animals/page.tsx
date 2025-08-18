@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Filter, SlidersHorizontal, ChevronDown, Search } from 'lucide-react';
 import AnimalCard from '@/components/features/animals/AnimalCard';
@@ -8,7 +8,7 @@ import { allAnimals } from '@/lib/mockData/initialData';
 import { SPECIES } from '@/types';
 import { localStorage } from '@/lib/localStorage/storage';
 
-export default function AnimalsPage() {
+function AnimalsContent() {
   const searchParams = useSearchParams();
   const initialSpecies = searchParams.get('species') || 'all';
   
@@ -202,5 +202,24 @@ export default function AnimalsPage() {
         </svg>
       </button>
     </div>
+  );
+}
+
+export default function AnimalsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-gray-50 pb-safe-offset-ios">
+        <div className="animate-pulse p-4">
+          <div className="h-12 bg-gray-200 rounded mb-4"></div>
+          <div className="grid grid-cols-2 gap-4">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="h-64 bg-gray-200 rounded"></div>
+            ))}
+          </div>
+        </div>
+      </div>
+    }>
+      <AnimalsContent />
+    </Suspense>
   );
 }
